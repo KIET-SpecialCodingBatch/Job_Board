@@ -7,6 +7,7 @@ import {
   Paper,
   makeStyles,
   TextField,
+  withWidth,
 } from "@material-ui/core";
 import axios from "axios";
 import ChipInput from "material-ui-chip-input";
@@ -248,10 +249,53 @@ const Profile = (props) => {
                   fullWidth
                 />
               </Grid>
+              
+              <Grid item>
+                  <TextField
+                    label="Roll.No"
+                    value="20B21A4623"
+                    variant="outlined"
+                    fullWidth
+                  />
+
+              </Grid>
+              
+              <Grid item>
+                  <TextField
+                    label="Phone No"
+                    value="9848012345"
+                    variant="outlined"
+                    fullWidth
+                  />
+
+              </Grid>
+
+              <div style={{
+                display: "flex",
+                justifyContent: "space-between",          
+              }}>
+                  <TextField 
+                    label="Phone No"
+                    value="9848012345"
+                    variant="outlined"
+                    
+                  />
+              
+                  <TextField
+                    label="Phone No"
+                    value="9848012345"
+                    variant="outlined"
+                    
+                  />
+            
+
+              </div>
+
               <MultifieldInput
                 education={education}
                 setEducation={setEducation}
               />
+
               <Grid item>
                 <ChipInput
                   className={classes.inputBox}
@@ -276,6 +320,16 @@ const Profile = (props) => {
                   fullWidth
                 />
               </Grid>
+
+              <Grid item>
+                <TextField
+                  label="No.of backlogs"
+                  value= "0"
+                  variant="outlined"
+                  fullWidth
+                 /> 
+              </Grid>
+
               <Grid item>
                 <FileUploadInput
                   className={classes.inputBox}
