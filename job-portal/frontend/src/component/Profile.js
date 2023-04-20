@@ -275,15 +275,15 @@ const Profile = (props) => {
                 justifyContent: "space-between",          
               }}>
                   <TextField 
-                    label="Phone No"
-                    value="9848012345"
+                    label="SSC CGPA"
+                    value="9.0"
                     variant="outlined"
                     
                   />
               
                   <TextField
-                    label="Phone No"
-                    value="9848012345"
+                    label="Inter CGPA"
+                    value="9.0"
                     variant="outlined"
                     
                   />
