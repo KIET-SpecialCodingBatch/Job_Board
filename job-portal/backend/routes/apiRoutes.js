@@ -443,6 +443,21 @@ router.put("/user", jwtAuth, (req, res) => {
         if (data.education) {
           jobApplicant.education = data.education;
         }
+        if(data.RollNo){
+          jobApplicant.RollNo = data.RollNo;
+        }
+        if(data.Ph_No){
+          jobApplicant.Ph_No = data.Ph_No;
+        }
+        if(data.ssc_cgpa){
+          jobApplicant.ssc_cgpa = data.ssc_cgpa
+        }
+        if(data.inter_cgpa){
+          jobApplicant.inter_cgpa = data.inter_cgpa
+        }
+        if(data.backlogs){
+          jobApplicant.backlogs = data.backlogs
+        }
         if (data.skills) {
           jobApplicant.skills = data.skills;
         }

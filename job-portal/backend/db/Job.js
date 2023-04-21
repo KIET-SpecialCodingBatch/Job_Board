@@ -68,7 +68,7 @@ let schema = new mongoose.Schema(
           validator: function (value) {
             return value >= 0;
           },
-          msg: "acceptedCandidates should greater than equal to 0",
+          msg: "accepted Candidates should greater than equal to 0",
         },
       ],
     },

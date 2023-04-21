@@ -7,6 +7,7 @@ import {
   Paper,
   makeStyles,
   TextField,
+  withWidth,
 } from "@material-ui/core";
 import axios from "axios";
 import ChipInput from "material-ui-chip-input";
@@ -111,8 +112,13 @@ const Profile = (props) => {
 
   const [profileDetails, setProfileDetails] = useState({
     name: "",
+    RollNo:"",
+    Ph_No:"",
+    inter_cgpa:"",
+    ssc_cgpa:"",
     education: [],
     skills: [],
+    backlogs:0,
     resume: "",
     profile: "",
   });
@@ -248,10 +254,57 @@ const Profile = (props) => {
                   fullWidth
                 />
               </Grid>
+              
+              <Grid item>
+                  <TextField
+                    label="Roll.No"
+                    value={profileDetails.RollNo}
+                    onChange={(e)=>handleInput("RollNo",e.target.value)}
+                    className={classes.inputBox}
+                    variant="outlined"
+                    fullWidth
+                  />
+
+              </Grid>
+              
+              <Grid item>
+                  <TextField
+                    label="Phone No"
+                    value={profileDetails.Ph_No}
+                    onChange={(e)=>handleInput("Ph_No",e.target.value)}
+                    className={classes.inputBox}
+                    variant="outlined"
+                    fullWidth
+                  />
+
+              </Grid>
+
+              <Grid container justifyContent="center" spacing={0} >
+                <Grid container xs={6} justifyContent="center" >
+                <TextField 
+                  label="SSC CGPA"
+                  value={profileDetails.ssc_cgpa}
+                  variant="outlined"
+                  onChange={(e)=>handleInput("ssc_cgpa",e.target.value)}
+                  />
+                  </Grid>
+                <Grid container xs={6} justifyContent="center">
+                <TextField
+                  label="Inter CGPA"
+                  value={profileDetails.inter_cgpa}
+                  variant="outlined"
+                  onChange={(e)=>handleInput("inter_cgpa",e.target.value)}
+                  />
+                  </Grid>
+
+                </Grid>
+
+
               <MultifieldInput
                 education={education}
                 setEducation={setEducation}
               />
+
               <Grid item>
                 <ChipInput
                   className={classes.inputBox}
@@ -276,6 +329,18 @@ const Profile = (props) => {
                   fullWidth
                 />
               </Grid>
+
+              <Grid item>
+                <TextField
+                  label="No.of backlogs"
+                  value= {profileDetails.backlogs}
+                  onChange={(e)=>handleInput("backlogs",e.target.value)}
+                  className={classes.inputBox}
+                  variant="outlined"
+                  fullWidth
+                 /> 
+              </Grid>
+
               <Grid item>
                 <FileUploadInput
                   className={classes.inputBox}
