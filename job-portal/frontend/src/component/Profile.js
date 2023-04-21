@@ -112,8 +112,13 @@ const Profile = (props) => {
 
   const [profileDetails, setProfileDetails] = useState({
     name: "",
+    RollNo:"",
+    Ph_No:"",
+    inter_cgpa:"",
+    ssc_cgpa:"",
     education: [],
     skills: [],
+    backlogs:0,
     resume: "",
     profile: "",
   });
@@ -253,7 +258,9 @@ const Profile = (props) => {
               <Grid item>
                   <TextField
                     label="Roll.No"
-                    value="20B21A4623"
+                    value={profileDetails.RollNo}
+                    onChange={(e)=>handleInput("RollNo",e.target.value)}
+                    className={classes.inputBox}
                     variant="outlined"
                     fullWidth
                   />
@@ -263,33 +270,35 @@ const Profile = (props) => {
               <Grid item>
                   <TextField
                     label="Phone No"
-                    value="9848012345"
+                    value={profileDetails.Ph_No}
+                    onChange={(e)=>handleInput("Ph_No",e.target.value)}
+                    className={classes.inputBox}
                     variant="outlined"
                     fullWidth
                   />
 
               </Grid>
 
-              <div style={{
-                display: "flex",
-                justifyContent: "space-between",          
-              }}>
-                  <TextField 
-                    label="SSC CGPA"
-                    value="9.0"
-                    variant="outlined"
-                    
+              <Grid container justifyContent="center" spacing={0} >
+                <Grid container xs={6} justifyContent="center" >
+                <TextField 
+                  label="SSC CGPA"
+                  value={profileDetails.ssc_cgpa}
+                  variant="outlined"
+                  onChange={(e)=>handleInput("ssc_cgpa",e.target.value)}
                   />
-              
-                  <TextField
-                    label="Inter CGPA"
-                    value="9.0"
-                    variant="outlined"
-                    
+                  </Grid>
+                <Grid container xs={6} justifyContent="center">
+                <TextField
+                  label="Inter CGPA"
+                  value={profileDetails.inter_cgpa}
+                  variant="outlined"
+                  onChange={(e)=>handleInput("inter_cgpa",e.target.value)}
                   />
-            
+                  </Grid>
 
-              </div>
+                </Grid>
+
 
               <MultifieldInput
                 education={education}
@@ -324,7 +333,9 @@ const Profile = (props) => {
               <Grid item>
                 <TextField
                   label="No.of backlogs"
-                  value= "0"
+                  value= {profileDetails.backlogs}
+                  onChange={(e)=>handleInput("backlogs",e.target.value)}
+                  className={classes.inputBox}
                   variant="outlined"
                   fullWidth
                  /> 

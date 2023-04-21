@@ -10,6 +10,21 @@ let schema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    RollNo:{
+      type:String
+    },
+    Ph_No:{
+      type:String
+    },
+    ssc_cgpa:{
+      type:String
+    },
+    inter_cgpa:{
+      type:String
+    },
+    backlogs:{
+      type:Number
+    },
     education: [
       {
         institutionName: {
